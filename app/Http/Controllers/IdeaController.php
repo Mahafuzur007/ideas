@@ -14,7 +14,7 @@ class IdeaController extends Controller
                 'content' => request()->get('idea', 'null'),
             ]
         );
-        return redirect()->route('idea.show');
+        return redirect()->route('idea.show')->with('flash', 'Idea created successfully!');
 
         //to save the database
         // $idea->save();

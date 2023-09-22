@@ -41,6 +41,7 @@
                 </div>
             </div>
             <div class="col-6">
+                @include('include.success-message')
                 @include('include.share-idea')
 
                 <hr>
