@@ -15,11 +15,7 @@ class DashboardController extends Controller
         // $idea->likes = 0;
 
         //Way-02:
-        $idea = new Idea([
-            'content' => 'Hello World!',
-        ]);
 
-        $idea->save(); //for save the database
         return view('dashboard', [
             'ideas' => Idea::orderBy('created_at', 'DESC')->get()
         ]);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\IdeaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,5 @@ use Illuminate\Support\Facades\Route;
 \ Profile
 */
 
-Route::get('/', [DashboardController::class, 'index']);
-
-Route::get('/terms', function () {
-    return view('terms');
-});
+Route::get('/', [DashboardController::class, 'index'])->name('idea.show');
+Route::post('/idea', [IdeaController::class, 'store'])->name('idea.create');
