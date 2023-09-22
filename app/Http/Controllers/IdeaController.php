@@ -11,7 +11,7 @@ class IdeaController extends Controller
     {
 
         request()->validate([
-            'idea' => 'required|min:5'
+            'idea' => 'required|min:1'
         ]);
 
 

@@ -43,13 +43,15 @@
             <div class="col-6">
                 @include('include.success-message')
                 @include('include.share-idea')
-
                 <hr>
                 @foreach ($ideas as $idea)
                 <div class="mt-3">
                     @include('include.idea-card')
                 </div>
                 @endforeach
+                <div class="mt-3">
+                    {{$ideas->links()}}
+                </div>
             </div>
             <div class="col-3">
                 <div class="card">
