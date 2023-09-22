@@ -19,5 +19,6 @@ use Illuminate\Support\Facades\Route;
 \ Profile
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('idea.show');
-Route::post('/idea', [IdeaController::class, 'store'])->name('idea.create');
+Route::get('/', [DashboardController::class, 'index'])->name('ideas.show');
+Route::post('/idea', [IdeaController::class, 'store'])->name('ideas.create');
+Route::delete('/idea/{id}', [IdeaController::class, 'destroy'])->name('ideas.destroy');

@@ -20,9 +20,23 @@ class IdeaController extends Controller
                 'content' => request()->get('idea', 'null'),
             ]
         );
-        return redirect()->route('idea.show')->with('flash', 'Idea created successfully!');
+        return redirect()->route('ideas.show')->with('flash', 'Idea created successfully!');
 
         //to save the database
         // $idea->save();
+    }
+    public function destroy($id)
+    {
+        // Idea::destroy($id);
+
+        // return redirect()->route('ideas.show')->with('flash', 'Idea deleted successfully!');
+
+        try {
+            $idea = Idea::findOrFail($id);
+            $idea->delete();
+            return redirect()->route('ideas.show')->with('flash', 'Idea deleted successfully!');
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return redirect()->route('ideas.show')->with('flash', 'Idea has already been deleted.');
+        }
     }
 }
